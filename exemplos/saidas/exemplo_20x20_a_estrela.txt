@@ -1,0 +1,102 @@
+Mundo: arquivo exemplos/mapas/exemplo_20x20.txt | 20x20 | agente (7, 10), pacote (19, 1), destino (0, 6)
+Obstáculos: 61 | Pedágios: 57
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ .  $  .  $ ### $  X  .  $  .  .  $  .  .  .  .  .  .  .  . 
+ . ###### .  $  .  .  . ###### .  .  .  .  .  . ### .  $  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  . ### .  .  .  $  . 
+ .  . ### .  . ### .  . ###### .  .  .  .  .  .  .  .  .  . 
+ .  $  .  .  $  $  .  .  $  .  $  .  .  .  .  .  .  . ### . 
+ . ### .  .  .  .  .  .  .  $  $  $  .  .  . ###### .  .  . 
+ .  .  .  $  . ### .  .  $ ### .  .  .  .  $  .  .  .  .  . 
+ .  .  .  .  .  . ### .  .  $  A  .  . ### .  .  .  .  .  . 
+ .  .  .  .  .  .  . ### .  .  $  .  .  .  .  .  . ### $  . 
+### $  .  $  $ ### $  .  $  .  . ### .  . ###### .  .  .  . 
+ $  .  .  .  .  $  .  .  $ ###### .  .  .  .  .  .  .  .  . 
+ .  .  . ### .  .  .  .  .  .  . ### .  .  .  .  . ### $  . 
+ .  .  .  .  .  .  . ### .  $  $  $  .  .  .  . ###### . ###
+ .  .  . ###### .  .  $  .  . ### $  .  .  .  .  .  .  . ###
+ . ### $  .  . ### . ###### .  $  . ###### $  .  .  .  $ ###
+ . ### $ ### .  . ### .  .  .  .  .  .  .  $  $  .  $  . ###
+ $  .  .  .  .  $  .  .  .  .  .  .  $  .  $  .  .  .  $  . 
+ .  .  $  .  .  .  . ### . ### .  .  $ ### .  .  .  . ### $ 
+ .  .  .  $ ### . ### $  .  .  .  .  $  .  .  . ### .  .  . 
+ .  P ### $ ### .  .  .  .  .  .  $ ### .  . ### .  .  .  . 
+
+== A* ==
+  1. direita   -> agente em (7, 11)  custo 1  acumulado 1
+  2. baixo     -> agente em (8, 11)  custo 1  acumulado 2
+  3. direita   -> agente em (8, 12)  custo 1  acumulado 3
+  4. baixo     -> agente em (9, 12)  custo 1  acumulado 4
+  5. baixo     -> agente em (10, 12)  custo 1  acumulado 5
+  6. baixo     -> agente em (11, 12)  custo 1  acumulado 6
+  7. baixo     -> agente em (12, 12)  custo 1  acumulado 7
+  8. baixo     -> agente em (13, 12)  custo 1  acumulado 8
+  9. esquerda  -> agente em (13, 11)  custo 1  acumulado 9
+ 10. baixo     -> agente em (14, 11)  custo 3  acumulado 12  [pedágio: +2]
+ 11. baixo     -> agente em (15, 11)  custo 1  acumulado 13
+ 12. baixo     -> agente em (16, 11)  custo 1  acumulado 14
+ 13. esquerda  -> agente em (16, 10)  custo 1  acumulado 15
+ 14. esquerda  -> agente em (16, 9)  custo 1  acumulado 16
+ 15. esquerda  -> agente em (16, 8)  custo 1  acumulado 17
+ 16. esquerda  -> agente em (16, 7)  custo 1  acumulado 18
+ 17. esquerda  -> agente em (16, 6)  custo 1  acumulado 19
+ 18. baixo     -> agente em (17, 6)  custo 1  acumulado 20
+ 19. esquerda  -> agente em (17, 5)  custo 1  acumulado 21
+ 20. esquerda  -> agente em (17, 4)  custo 1  acumulado 22
+ 21. esquerda  -> agente em (17, 3)  custo 1  acumulado 23
+ 22. baixo     -> agente em (18, 3)  custo 1  acumulado 24
+ 23. esquerda  -> agente em (18, 2)  custo 3  acumulado 27  [pedágio: +2]
+ 24. esquerda  -> agente em (18, 1)  custo 1  acumulado 28
+ 25. baixo     -> agente em (19, 1)  custo 1  acumulado 29
+ 26. pegar     -> agente em (19, 1)  custo 1  acumulado 30
+ 27. cima      -> agente em (18, 1)  custo 1  acumulado 31
+ 28. cima      -> agente em (17, 1)  custo 1  acumulado 32
+ 29. cima      -> agente em (16, 1)  custo 1  acumulado 33
+ 30. direita   -> agente em (16, 2)  custo 1  acumulado 34
+ 31. cima      -> agente em (15, 2)  custo 1  acumulado 35
+ 32. cima      -> agente em (14, 2)  custo 3  acumulado 38  [pedágio: +2]
+ 33. cima      -> agente em (13, 2)  custo 3  acumulado 41  [pedágio: +2]
+ 34. cima      -> agente em (12, 2)  custo 1  acumulado 42
+ 35. cima      -> agente em (11, 2)  custo 1  acumulado 43
+ 36. cima      -> agente em (10, 2)  custo 1  acumulado 44
+ 37. cima      -> agente em (9, 2)  custo 1  acumulado 45
+ 38. cima      -> agente em (8, 2)  custo 1  acumulado 46
+ 39. cima      -> agente em (7, 2)  custo 1  acumulado 47
+ 40. cima      -> agente em (6, 2)  custo 1  acumulado 48
+ 41. cima      -> agente em (5, 2)  custo 1  acumulado 49
+ 42. cima      -> agente em (4, 2)  custo 1  acumulado 50
+ 43. direita   -> agente em (4, 3)  custo 1  acumulado 51
+ 44. cima      -> agente em (3, 3)  custo 1  acumulado 52
+ 45. cima      -> agente em (2, 3)  custo 1  acumulado 53
+ 46. direita   -> agente em (2, 4)  custo 1  acumulado 54
+ 47. direita   -> agente em (2, 5)  custo 1  acumulado 55
+ 48. cima      -> agente em (1, 5)  custo 1  acumulado 56
+ 49. direita   -> agente em (1, 6)  custo 1  acumulado 57
+ 50. cima      -> agente em (0, 6)  custo 1  acumulado 58
+ 51. entregar  -> agente em (0, 6)  custo 1  acumulado 59
+Total: 51 ações, custo 59.
+[A*] custo 59, 51 ações | nós expandidos: 391, gerados: 1383, fronteira máx.: 232, tempo: 4.4 ms
+
+Caminho percorrido (*):
+ .  $  .  $ ### $  X  .  $  .  .  $  .  .  .  .  .  .  .  . 
+ . ###### .  $  *  *  . ###### .  .  .  .  .  . ### .  $  . 
+ .  .  .  *  *  *  .  .  .  .  .  .  .  . ### .  .  .  $  . 
+ .  . ### *  . ### .  . ###### .  .  .  .  .  .  .  .  .  . 
+ .  $  *  *  $  $  .  .  $  .  $  .  .  .  .  .  .  . ### . 
+ . ### *  .  .  .  .  .  .  $  $  $  .  .  . ###### .  .  . 
+ .  .  *  $  . ### .  .  $ ### .  .  .  .  $  .  .  .  .  . 
+ .  .  *  .  .  . ### .  .  $  A  *  . ### .  .  .  .  .  . 
+ .  .  *  .  .  .  . ### .  .  $  *  *  .  .  .  . ### $  . 
+### $  *  $  $ ### $  .  $  .  . ### *  . ###### .  .  .  . 
+ $  .  *  .  .  $  .  .  $ ###### .  *  .  .  .  .  .  .  . 
+ .  .  * ### .  .  .  .  .  .  . ### *  .  .  .  . ### $  . 
+ .  .  *  .  .  .  . ### .  $  $  $  *  .  .  . ###### . ###
+ .  .  * ###### .  .  $  .  . ###*$  *  .  .  .  .  .  . ###
+ . ###*$  .  . ### . ###### .  $  * ###### $  .  .  .  $ ###
+ . ###*$ ### .  . ### .  .  .  .  *  .  .  $  $  .  $  . ###
+ $  *  *  .  .  $  *  *  *  *  *  *  $  .  $  .  .  .  $  . 
+ .  *  $  *  *  *  * ### . ### .  .  $ ### .  .  .  . ### $ 
+ .  *  * *$ ### . ### $  .  .  .  .  $  .  .  . ### .  .  . 
+ .  P ### $ ### .  .  .  .  .  .  $ ### .  . ### .  .  .  . 
+

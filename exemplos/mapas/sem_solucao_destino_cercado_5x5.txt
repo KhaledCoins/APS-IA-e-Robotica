@@ -1,0 +1,10 @@
+# Destino cercado: nao existe solucao.
+n=5
+agente=0,0
+pacote=0,4
+destino=4,4
+.....
+.....
+..$..
+....#
+...#.

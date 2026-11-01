@@ -1,0 +1,10 @@
+# Pacote cercado por obstaculos: nao existe solucao.
+n=5
+agente=0,0
+pacote=2,2
+destino=4,4
+.....
+..#..
+.#.#.
+..#..
+.....

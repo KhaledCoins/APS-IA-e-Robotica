@@ -1,0 +1,154 @@
+Mundo: arquivo exemplos/mapas/exemplo_10x10.txt | 10x10 | agente (0, 0), pacote (7, 6), destino (6, 1)
+Obstáculos: 31 | Pedágios: 12
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ A ###### $  . ###### .  . ###
+ .  . ######### . ### . ######
+ .  .  .  . ### $  .  .  .  . 
+ .  .  .  .  .  .  $  $ ### . 
+ . ###### . ###### .  .  . ###
+ .  . ###### .  .  .  $  .  $ 
+ .  X  . ### .  .  $  $ ### . 
+ $ ###### .  . ###P$  .  . ###
+ $  .  . ###### .  .  .  . ###
+ .  . ### .  .  $  .  .  . ###
+
+== A* ==
+  1. baixo     -> agente em (1, 0)  custo 1  acumulado 1
+  2. baixo     -> agente em (2, 0)  custo 1  acumulado 2
+  3. baixo     -> agente em (3, 0)  custo 1  acumulado 3
+  4. direita   -> agente em (3, 1)  custo 1  acumulado 4
+  5. direita   -> agente em (3, 2)  custo 1  acumulado 5
+  6. direita   -> agente em (3, 3)  custo 1  acumulado 6
+  7. direita   -> agente em (3, 4)  custo 1  acumulado 7
+  8. direita   -> agente em (3, 5)  custo 1  acumulado 8
+  9. direita   -> agente em (3, 6)  custo 1  acumulado 9
+ 10. baixo     -> agente em (4, 6)  custo 3  acumulado 12  [pedágio: +2]
+ 11. baixo     -> agente em (5, 6)  custo 1  acumulado 13
+ 12. baixo     -> agente em (6, 6)  custo 1  acumulado 14
+ 13. baixo     -> agente em (7, 6)  custo 3  acumulado 17  [pedágio: +2]
+ 14. pegar     -> agente em (7, 6)  custo 3  acumulado 20  [pedágio: +2]
+ 15. cima      -> agente em (6, 6)  custo 3  acumulado 23  [pedágio: +2]
+ 16. cima      -> agente em (5, 6)  custo 3  acumulado 26  [pedágio: +2]
+ 17. cima      -> agente em (4, 6)  custo 1  acumulado 27
+ 18. cima      -> agente em (3, 6)  custo 1  acumulado 28
+ 19. esquerda  -> agente em (3, 5)  custo 3  acumulado 31  [pedágio: +2]
+ 20. esquerda  -> agente em (3, 4)  custo 1  acumulado 32
+ 21. esquerda  -> agente em (3, 3)  custo 1  acumulado 33
+ 22. esquerda  -> agente em (3, 2)  custo 1  acumulado 34
+ 23. esquerda  -> agente em (3, 1)  custo 1  acumulado 35
+ 24. esquerda  -> agente em (3, 0)  custo 1  acumulado 36
+ 25. baixo     -> agente em (4, 0)  custo 1  acumulado 37
+ 26. baixo     -> agente em (5, 0)  custo 1  acumulado 38
+ 27. baixo     -> agente em (6, 0)  custo 1  acumulado 39
+ 28. direita   -> agente em (6, 1)  custo 1  acumulado 40
+ 29. entregar  -> agente em (6, 1)  custo 1  acumulado 41
+Total: 29 ações, custo 41.
+[A*] custo 41, 29 ações | nós expandidos: 338, gerados: 1060, fronteira máx.: 169, tempo: 5.2 ms
+
+Caminho percorrido (*):
+ A ###### $  . ###### .  . ###
+ *  . ######### . ### . ######
+ *  .  .  . ### $  .  .  .  . 
+ *  *  *  *  *  * *$  $ ### . 
+ * ###### . ###### *  .  . ###
+ *  . ###### .  .  *  $  .  $ 
+ *  X  . ### .  . *$  $ ### . 
+ $ ###### .  . ###P$  .  . ###
+ $  .  . ###### .  .  .  . ###
+ .  . ### .  .  $  .  .  . ###
+
+== Custo Uniforme ==
+  1. baixo     -> agente em (1, 0)  custo 1  acumulado 1
+  2. baixo     -> agente em (2, 0)  custo 1  acumulado 2
+  3. baixo     -> agente em (3, 0)  custo 1  acumulado 3
+  4. direita   -> agente em (3, 1)  custo 1  acumulado 4
+  5. direita   -> agente em (3, 2)  custo 1  acumulado 5
+  6. direita   -> agente em (3, 3)  custo 1  acumulado 6
+  7. direita   -> agente em (3, 4)  custo 1  acumulado 7
+  8. direita   -> agente em (3, 5)  custo 1  acumulado 8
+  9. direita   -> agente em (3, 6)  custo 1  acumulado 9
+ 10. baixo     -> agente em (4, 6)  custo 3  acumulado 12  [pedágio: +2]
+ 11. baixo     -> agente em (5, 6)  custo 1  acumulado 13
+ 12. baixo     -> agente em (6, 6)  custo 1  acumulado 14
+ 13. baixo     -> agente em (7, 6)  custo 3  acumulado 17  [pedágio: +2]
+ 14. pegar     -> agente em (7, 6)  custo 3  acumulado 20  [pedágio: +2]
+ 15. cima      -> agente em (6, 6)  custo 3  acumulado 23  [pedágio: +2]
+ 16. cima      -> agente em (5, 6)  custo 3  acumulado 26  [pedágio: +2]
+ 17. cima      -> agente em (4, 6)  custo 1  acumulado 27
+ 18. cima      -> agente em (3, 6)  custo 1  acumulado 28
+ 19. esquerda  -> agente em (3, 5)  custo 3  acumulado 31  [pedágio: +2]
+ 20. esquerda  -> agente em (3, 4)  custo 1  acumulado 32
+ 21. esquerda  -> agente em (3, 3)  custo 1  acumulado 33
+ 22. esquerda  -> agente em (3, 2)  custo 1  acumulado 34
+ 23. esquerda  -> agente em (3, 1)  custo 1  acumulado 35
+ 24. esquerda  -> agente em (3, 0)  custo 1  acumulado 36
+ 25. baixo     -> agente em (4, 0)  custo 1  acumulado 37
+ 26. baixo     -> agente em (5, 0)  custo 1  acumulado 38
+ 27. baixo     -> agente em (6, 0)  custo 1  acumulado 39
+ 28. direita   -> agente em (6, 1)  custo 1  acumulado 40
+ 29. entregar  -> agente em (6, 1)  custo 1  acumulado 41
+Total: 29 ações, custo 41.
+[Custo Uniforme] custo 41, 29 ações | nós expandidos: 1818, gerados: 5021, fronteira máx.: 303, tempo: 7.7 ms
+
+Caminho percorrido (*):
+ A ###### $  . ###### .  . ###
+ *  . ######### . ### . ######
+ *  .  .  . ### $  .  .  .  . 
+ *  *  *  *  *  * *$  $ ### . 
+ * ###### . ###### *  .  . ###
+ *  . ###### .  .  *  $  .  $ 
+ *  X  . ### .  . *$  $ ### . 
+ $ ###### .  . ###P$  .  . ###
+ $  .  . ###### .  .  .  . ###
+ .  . ### .  .  $  .  .  . ###
+
+== Largura ==
+  1. baixo     -> agente em (1, 0)  custo 1  acumulado 1
+  2. baixo     -> agente em (2, 0)  custo 1  acumulado 2
+  3. baixo     -> agente em (3, 0)  custo 1  acumulado 3
+  4. direita   -> agente em (3, 1)  custo 1  acumulado 4
+  5. direita   -> agente em (3, 2)  custo 1  acumulado 5
+  6. direita   -> agente em (3, 3)  custo 1  acumulado 6
+  7. direita   -> agente em (3, 4)  custo 1  acumulado 7
+  8. direita   -> agente em (3, 5)  custo 1  acumulado 8
+  9. direita   -> agente em (3, 6)  custo 1  acumulado 9
+ 10. baixo     -> agente em (4, 6)  custo 3  acumulado 12  [pedágio: +2]
+ 11. baixo     -> agente em (5, 6)  custo 1  acumulado 13
+ 12. baixo     -> agente em (6, 6)  custo 1  acumulado 14
+ 13. baixo     -> agente em (7, 6)  custo 3  acumulado 17  [pedágio: +2]
+ 14. pegar     -> agente em (7, 6)  custo 3  acumulado 20  [pedágio: +2]
+ 15. cima      -> agente em (6, 6)  custo 3  acumulado 23  [pedágio: +2]
+ 16. cima      -> agente em (5, 6)  custo 3  acumulado 26  [pedágio: +2]
+ 17. cima      -> agente em (4, 6)  custo 1  acumulado 27
+ 18. cima      -> agente em (3, 6)  custo 1  acumulado 28
+ 19. esquerda  -> agente em (3, 5)  custo 3  acumulado 31  [pedágio: +2]
+ 20. esquerda  -> agente em (3, 4)  custo 1  acumulado 32
+ 21. esquerda  -> agente em (3, 3)  custo 1  acumulado 33
+ 22. esquerda  -> agente em (3, 2)  custo 1  acumulado 34
+ 23. esquerda  -> agente em (3, 1)  custo 1  acumulado 35
+ 24. esquerda  -> agente em (3, 0)  custo 1  acumulado 36
+ 25. baixo     -> agente em (4, 0)  custo 1  acumulado 37
+ 26. baixo     -> agente em (5, 0)  custo 1  acumulado 38
+ 27. baixo     -> agente em (6, 0)  custo 1  acumulado 39
+ 28. direita   -> agente em (6, 1)  custo 1  acumulado 40
+ 29. entregar  -> agente em (6, 1)  custo 1  acumulado 41
+Total: 29 ações, custo 41.
+[Largura] custo 41, 29 ações | nós expandidos: 1919, gerados: 5332, fronteira máx.: 270, tempo: 5.3 ms
+
+Caminho percorrido (*):
+ A ###### $  . ###### .  . ###
+ *  . ######### . ### . ######
+ *  .  .  . ### $  .  .  .  . 
+ *  *  *  *  *  * *$  $ ### . 
+ * ###### . ###### *  .  . ###
+ *  . ###### .  .  *  $  .  $ 
+ *  X  . ### .  . *$  $ ### . 
+ $ ###### .  . ###P$  .  . ###
+ $  .  . ###### .  .  .  . ###
+ .  . ### .  .  $  .  .  . ###
+
+== Comparação ==
+A*               custo 41   ações 29   expandidos 338    (ótimo)
+Custo Uniforme   custo 41   ações 29   expandidos 1818   (ótimo)
+Largura          custo 41   ações 29   expandidos 1919   (não garante ótimo)

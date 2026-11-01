@@ -1,0 +1,12 @@
+ A ### .  . 
+ $  .  P  . 
+ .  . ### . 
+ .  .  .  X 
+
+Entregador em grid: o agente deve pegar o pacote e entregá-lo no destino com o menor custo, desviando de obstáculos e pagando pedágios.
+Estado inicial: ((0, 0), (1, 2))
+Usando A* (busca em grafo)
+Encontrou!
+Plano : baixo ; direita ; direita ; pegar ; direita ; baixo ; baixo ; entregar
+Custo : 10
+Estado final: ((3, 3), (3, 3))

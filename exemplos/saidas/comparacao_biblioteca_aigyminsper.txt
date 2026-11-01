@@ -1,0 +1,19 @@
+== Mapa da prova (Figura 2) ==
+  implementação própria (A*)           : custo 10
+  aigyminsper AEstrela, poda father-son: custo 10
+  aigyminsper AEstrela, poda general   : custo 10
+  aigyminsper BuscaCustoUniforme, general: custo 10
+
+== Contraexemplo exemplos/mapas/poda_biblioteca_3x3.txt ==
+ .  .  . 
+ A X$ ###
+ P  $  . 
+  implementação própria (A*)           : custo 7  plano: baixo ; pegar ; cima ; direita ; entregar
+  aigyminsper AEstrela, poda general   : custo 9  plano: ; baixo ; pegar ; direita ; cima ; entregar
+  aigyminsper AEstrela, poda father-son: custo 7  plano: ; baixo ; pegar ; cima ; direita ; entregar
+
+== 200 mundos aleatórios (N entre 3 e 7), poda 'general' da biblioteca ==
+  mundos com solução: 185
+  AEstrela (general) sub-ótimo em 24 (13.0%)
+  BuscaCustoUniforme (general) sub-ótimo em 26 (14.1%)
+  implementação própria: ótima em 100% (igual ao custo uniforme próprio, verificado nos testes)

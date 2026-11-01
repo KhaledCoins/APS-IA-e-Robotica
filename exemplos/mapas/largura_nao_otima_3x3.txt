@@ -1,0 +1,8 @@
+# Largura devolve plano mais curto porem mais caro (12) que o otimo (8).
+n=3
+agente=2,2
+pacote=1,2
+destino=2,0
+..#
+...
+.$$

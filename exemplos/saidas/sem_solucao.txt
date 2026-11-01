@@ -1,0 +1,41 @@
+Mundo: arquivo exemplos/mapas/sem_solucao_pacote_cercado_5x5.txt | 5x5 | agente (0, 0), pacote (2, 2), destino (4, 4)
+Obstáculos: 4 | Pedágios: 0
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ A  .  .  .  . 
+ .  . ### .  . 
+ . ### P ### . 
+ .  . ### .  . 
+ .  .  .  .  X 
+
+== A* ==
+SEM SOLUÇÃO: Não existe caminho entre o agente (0, 0) e o pacote (2, 2).
+[A*] sem solução | nós expandidos: 20, gerados: 48, fronteira máx.: 4, tempo: 0.1 ms
+
+Mundo: arquivo exemplos/mapas/sem_solucao_destino_cercado_5x5.txt | 5x5 | agente (0, 0), pacote (0, 4), destino (4, 4)
+Obstáculos: 2 | Pedágios: 1
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ A  .  .  .  P 
+ .  .  .  .  . 
+ .  .  $  .  . 
+ .  .  .  . ###
+ .  .  . ### X 
+
+== A* ==
+SEM SOLUÇÃO: O destino (4, 4) está cercado por obstáculos/bordas e é inalcançável.
+[A*] sem solução | nós expandidos: 506, gerados: 1608, fronteira máx.: 107, tempo: 4.3 ms
+
+Mundo: arquivo exemplos/mapas/sem_solucao_agente_cercado_4x4.txt | 4x4 | agente (0, 0), pacote (2, 2), destino (3, 3)
+Obstáculos: 2 | Pedágios: 0
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ A ### .  . 
+### .  .  . 
+ .  .  P  . 
+ .  .  .  X 
+
+== A* ==
+SEM SOLUÇÃO: O agente em (0, 0) está cercado por obstáculos/bordas e não consegue se mover.
+[A*] sem solução | nós expandidos: 1, gerados: 0, fronteira máx.: 1, tempo: 0.0 ms
+

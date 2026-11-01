@@ -1,0 +1,156 @@
+Mundo: aleatório n=15, seed=7 | 15x15 | agente (12, 9), pacote (13, 2), destino (13, 13)
+Obstáculos: 27 | Pedágios: 14
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ .  $  .  .  . ### .  .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  $  $  .  .  .  .  . 
+ .  .  $  .  .  .  . ### .  $ ### .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### . ###### .  . ###### .  . 
+ .  . ### .  .  $ ### .  $  .  $ ### .  .  . 
+ .  .  .  .  $  .  .  . ### .  .  . ###### . 
+ . ### .  .  .  .  .  $ ### . ### .  .  .  . 
+ . ### .  . ### .  .  $ ### .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### .  .  .  .  .  .  .  .  . 
+### .  .  . ###### . ### .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . ### .  A  .  .  .  $  . 
+ .  .  P  .  .  .  .  $  .  . ### .  .  X  . 
+ $  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+
+== A* ==
+  1. baixo     -> agente em (13, 9)  custo 1  acumulado 1
+  2. esquerda  -> agente em (13, 8)  custo 1  acumulado 2
+  3. esquerda  -> agente em (13, 7)  custo 1  acumulado 3
+  4. esquerda  -> agente em (13, 6)  custo 3  acumulado 6  [pedágio: +2]
+  5. esquerda  -> agente em (13, 5)  custo 1  acumulado 7
+  6. esquerda  -> agente em (13, 4)  custo 1  acumulado 8
+  7. esquerda  -> agente em (13, 3)  custo 1  acumulado 9
+  8. esquerda  -> agente em (13, 2)  custo 1  acumulado 10
+  9. pegar     -> agente em (13, 2)  custo 1  acumulado 11
+ 10. direita   -> agente em (13, 3)  custo 1  acumulado 12
+ 11. direita   -> agente em (13, 4)  custo 1  acumulado 13
+ 12. direita   -> agente em (13, 5)  custo 1  acumulado 14
+ 13. direita   -> agente em (13, 6)  custo 1  acumulado 15
+ 14. baixo     -> agente em (14, 6)  custo 1  acumulado 16
+ 15. direita   -> agente em (14, 7)  custo 1  acumulado 17
+ 16. direita   -> agente em (14, 8)  custo 1  acumulado 18
+ 17. direita   -> agente em (14, 9)  custo 1  acumulado 19
+ 18. direita   -> agente em (14, 10)  custo 1  acumulado 20
+ 19. direita   -> agente em (14, 11)  custo 1  acumulado 21
+ 20. cima      -> agente em (13, 11)  custo 1  acumulado 22
+ 21. direita   -> agente em (13, 12)  custo 1  acumulado 23
+ 22. direita   -> agente em (13, 13)  custo 1  acumulado 24
+ 23. entregar  -> agente em (13, 13)  custo 1  acumulado 25
+Total: 23 ações, custo 25.
+[A*] custo 25, 23 ações | nós expandidos: 71, gerados: 271, fronteira máx.: 71, tempo: 3.1 ms
+
+Caminho percorrido (*):
+ .  $  .  .  . ### .  .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  $  $  .  .  .  .  . 
+ .  .  $  .  .  .  . ### .  $ ### .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### . ###### .  . ###### .  . 
+ .  . ### .  .  $ ### .  $  .  $ ### .  .  . 
+ .  .  .  .  $  .  .  . ### .  .  . ###### . 
+ . ### .  .  .  .  .  $ ### . ### .  .  .  . 
+ . ### .  . ### .  .  $ ### .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### .  .  .  .  .  .  .  .  . 
+### .  .  . ###### . ### .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . ### .  A  .  .  .  $  . 
+ .  .  P  *  *  *  * *$  *  * ### *  *  X  . 
+ $  .  .  .  .  .  *  *  *  *  *  *  .  .  . 
+
+== Custo Uniforme ==
+  1. baixo     -> agente em (13, 9)  custo 1  acumulado 1
+  2. esquerda  -> agente em (13, 8)  custo 1  acumulado 2
+  3. esquerda  -> agente em (13, 7)  custo 1  acumulado 3
+  4. esquerda  -> agente em (13, 6)  custo 3  acumulado 6  [pedágio: +2]
+  5. esquerda  -> agente em (13, 5)  custo 1  acumulado 7
+  6. esquerda  -> agente em (13, 4)  custo 1  acumulado 8
+  7. esquerda  -> agente em (13, 3)  custo 1  acumulado 9
+  8. esquerda  -> agente em (13, 2)  custo 1  acumulado 10
+  9. pegar     -> agente em (13, 2)  custo 1  acumulado 11
+ 10. baixo     -> agente em (14, 2)  custo 1  acumulado 12
+ 11. direita   -> agente em (14, 3)  custo 1  acumulado 13
+ 12. direita   -> agente em (14, 4)  custo 1  acumulado 14
+ 13. direita   -> agente em (14, 5)  custo 1  acumulado 15
+ 14. direita   -> agente em (14, 6)  custo 1  acumulado 16
+ 15. direita   -> agente em (14, 7)  custo 1  acumulado 17
+ 16. direita   -> agente em (14, 8)  custo 1  acumulado 18
+ 17. direita   -> agente em (14, 9)  custo 1  acumulado 19
+ 18. direita   -> agente em (14, 10)  custo 1  acumulado 20
+ 19. direita   -> agente em (14, 11)  custo 1  acumulado 21
+ 20. cima      -> agente em (13, 11)  custo 1  acumulado 22
+ 21. direita   -> agente em (13, 12)  custo 1  acumulado 23
+ 22. direita   -> agente em (13, 13)  custo 1  acumulado 24
+ 23. entregar  -> agente em (13, 13)  custo 1  acumulado 25
+Total: 23 ações, custo 25.
+[Custo Uniforme] custo 25, 23 ações | nós expandidos: 4720, gerados: 15998, fronteira máx.: 1306, tempo: 22.7 ms
+
+Caminho percorrido (*):
+ .  $  .  .  . ### .  .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  $  $  .  .  .  .  . 
+ .  .  $  .  .  .  . ### .  $ ### .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### . ###### .  . ###### .  . 
+ .  . ### .  .  $ ### .  $  .  $ ### .  .  . 
+ .  .  .  .  $  .  .  . ### .  .  . ###### . 
+ . ### .  .  .  .  .  $ ### . ### .  .  .  . 
+ . ### .  . ### .  .  $ ### .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### .  .  .  .  .  .  .  .  . 
+### .  .  . ###### . ### .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . ### .  A  .  .  .  $  . 
+ .  .  P  *  *  *  * *$  *  * ### *  *  X  . 
+ $  .  *  *  *  *  *  *  *  *  *  *  .  .  . 
+
+== Largura ==
+  1. baixo     -> agente em (13, 9)  custo 1  acumulado 1
+  2. esquerda  -> agente em (13, 8)  custo 1  acumulado 2
+  3. esquerda  -> agente em (13, 7)  custo 1  acumulado 3
+  4. esquerda  -> agente em (13, 6)  custo 3  acumulado 6  [pedágio: +2]
+  5. esquerda  -> agente em (13, 5)  custo 1  acumulado 7
+  6. esquerda  -> agente em (13, 4)  custo 1  acumulado 8
+  7. esquerda  -> agente em (13, 3)  custo 1  acumulado 9
+  8. esquerda  -> agente em (13, 2)  custo 1  acumulado 10
+  9. pegar     -> agente em (13, 2)  custo 1  acumulado 11
+ 10. baixo     -> agente em (14, 2)  custo 1  acumulado 12
+ 11. direita   -> agente em (14, 3)  custo 1  acumulado 13
+ 12. direita   -> agente em (14, 4)  custo 1  acumulado 14
+ 13. direita   -> agente em (14, 5)  custo 1  acumulado 15
+ 14. direita   -> agente em (14, 6)  custo 1  acumulado 16
+ 15. direita   -> agente em (14, 7)  custo 1  acumulado 17
+ 16. direita   -> agente em (14, 8)  custo 1  acumulado 18
+ 17. direita   -> agente em (14, 9)  custo 1  acumulado 19
+ 18. direita   -> agente em (14, 10)  custo 1  acumulado 20
+ 19. direita   -> agente em (14, 11)  custo 1  acumulado 21
+ 20. cima      -> agente em (13, 11)  custo 1  acumulado 22
+ 21. direita   -> agente em (13, 12)  custo 1  acumulado 23
+ 22. direita   -> agente em (13, 13)  custo 1  acumulado 24
+ 23. entregar  -> agente em (13, 13)  custo 1  acumulado 25
+Total: 23 ações, custo 25.
+[Largura] custo 25, 23 ações | nós expandidos: 3902, gerados: 13255, fronteira máx.: 1133, tempo: 11.1 ms
+
+Caminho percorrido (*):
+ .  $  .  .  . ### .  .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  $  $  .  .  .  .  . 
+ .  .  $  .  .  .  . ### .  $ ### .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### . ###### .  . ###### .  . 
+ .  . ### .  .  $ ### .  $  .  $ ### .  .  . 
+ .  .  .  .  $  .  .  . ### .  .  . ###### . 
+ . ### .  .  .  .  .  $ ### . ### .  .  .  . 
+ . ### .  . ### .  .  $ ### .  .  .  .  .  . 
+ .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+ .  .  .  .  . ### .  .  .  .  .  .  .  .  . 
+### .  .  . ###### . ### .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . ### .  A  .  .  .  $  . 
+ .  .  P  *  *  *  * *$  *  * ### *  *  X  . 
+ $  .  *  *  *  *  *  *  *  *  *  *  .  .  . 
+
+== Comparação ==
+A*               custo 25   ações 23   expandidos 71     (ótimo)
+Custo Uniforme   custo 25   ações 23   expandidos 4720   (ótimo)
+Largura          custo 25   ações 23   expandidos 3902   (não garante ótimo)

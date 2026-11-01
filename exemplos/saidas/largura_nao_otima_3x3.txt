@@ -1,0 +1,57 @@
+Mundo: arquivo exemplos/mapas/largura_nao_otima_3x3.txt | 3x3 | agente (2, 2), pacote (1, 2), destino (2, 0)
+Obstáculos: 1 | Pedágios: 2
+Legenda: A agente (A+ = carregando o pacote), P pacote, X destino, ### obstáculo, $ pedágio, * caminho
+
+ .  . ###
+ .  .  P 
+ X  $ A$ 
+
+== A* ==
+  1. cima      -> agente em (1, 2)  custo 3  acumulado 3  [pedágio: +2]
+  2. pegar     -> agente em (1, 2)  custo 1  acumulado 4
+  3. esquerda  -> agente em (1, 1)  custo 1  acumulado 5
+  4. esquerda  -> agente em (1, 0)  custo 1  acumulado 6
+  5. baixo     -> agente em (2, 0)  custo 1  acumulado 7
+  6. entregar  -> agente em (2, 0)  custo 1  acumulado 8
+Total: 6 ações, custo 8.
+[A*] custo 8, 6 ações | nós expandidos: 9, gerados: 27, fronteira máx.: 11, tempo: 0.1 ms
+
+Caminho percorrido (*):
+ .  . ###
+ *  *  P 
+ X  $ A$ 
+
+== Custo Uniforme ==
+  1. cima      -> agente em (1, 2)  custo 3  acumulado 3  [pedágio: +2]
+  2. pegar     -> agente em (1, 2)  custo 1  acumulado 4
+  3. esquerda  -> agente em (1, 1)  custo 1  acumulado 5
+  4. esquerda  -> agente em (1, 0)  custo 1  acumulado 6
+  5. baixo     -> agente em (2, 0)  custo 1  acumulado 7
+  6. entregar  -> agente em (2, 0)  custo 1  acumulado 8
+Total: 6 ações, custo 8.
+[Custo Uniforme] custo 8, 6 ações | nós expandidos: 28, gerados: 83, fronteira máx.: 19, tempo: 0.1 ms
+
+Caminho percorrido (*):
+ .  . ###
+ *  *  P 
+ X  $ A$ 
+
+== Largura ==
+  1. cima      -> agente em (1, 2)  custo 3  acumulado 3  [pedágio: +2]
+  2. pegar     -> agente em (1, 2)  custo 1  acumulado 4
+  3. baixo     -> agente em (2, 2)  custo 1  acumulado 5
+  4. esquerda  -> agente em (2, 1)  custo 3  acumulado 8  [pedágio: +2]
+  5. esquerda  -> agente em (2, 0)  custo 3  acumulado 11  [pedágio: +2]
+  6. entregar  -> agente em (2, 0)  custo 1  acumulado 12
+Total: 6 ações, custo 12.
+[Largura] custo 12, 6 ações | nós expandidos: 17, gerados: 54, fronteira máx.: 11, tempo: 0.1 ms
+
+Caminho percorrido (*):
+ .  . ###
+ .  .  P 
+ X *$ A$ 
+
+== Comparação ==
+A*               custo 8    ações 6    expandidos 9      (ótimo)
+Custo Uniforme   custo 8    ações 6    expandidos 28     (ótimo)
+Largura          custo 12   ações 6    expandidos 17     (não garante ótimo)

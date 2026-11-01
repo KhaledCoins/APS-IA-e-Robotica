@@ -1,0 +1,9 @@
+Mundos avaliados: 300 (N de 4 a 12)
+  sem solução: 42 (14.0%)  |  com solução: 258
+  A* == custo uniforme em 100% dos mundos com solução (verificado por assert)
+  largura devolveu plano mais caro em 88 de 258 (34.1%), diferença média de custo 2.95 (máx. 12)
+
+algoritmo         expandidos (média)  expandidos (máx)  tempo médio (ms)
+a_estrela                       41.0               349              0.19
+custo_uniforme                 536.7              4263              2.67
+largura                        376.4              3433              1.10

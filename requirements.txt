@@ -1,0 +1,10 @@
+# O programa principal (interface gráfica, CLI e algoritmos) usa apenas a
+# biblioteca padrão do Python (3.10+), incluindo o tkinter.
+#
+# Dependências OPCIONAIS:
+#   - aigyminsper: biblioteca do curso. Quando instalada, EstadoEntrega herda
+#     de aigyminsper.search.graph.HeuristicState e o script
+#     exemplos/comparar_biblioteca.py pode ser executado.
+#   - pytest: para rodar a suíte de testes (tests/).
+aigyminsper==0.3.9
+pytest>=7

@@ -1,0 +1,8 @@
+# A poda 'general' da aigyminsper devolve custo 9; o otimo e 7.
+n=3
+agente=1,0
+pacote=2,0
+destino=1,1
+...
+.$#
+.$.

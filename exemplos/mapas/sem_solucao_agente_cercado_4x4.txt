@@ -1,0 +1,9 @@
+# Agente cercado na origem: nao existe solucao.
+n=4
+agente=0,0
+pacote=2,2
+destino=3,3
+.#..
+#...
+....
+....

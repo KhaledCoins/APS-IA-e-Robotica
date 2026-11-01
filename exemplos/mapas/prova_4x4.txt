@@ -1,0 +1,9 @@
+# Figura 2 da prova (grid 4x4). Solucao otima: custo 10.
+n=4
+agente=0,0
+pacote=1,2
+destino=3,3
+.#..
+$...
+..#.
+....
